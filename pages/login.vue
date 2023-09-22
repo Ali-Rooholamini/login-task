@@ -1,5 +1,5 @@
 <template>
-  <div>login</div>
+  <div><p>متن تست فونت هستم بنده</p></div>
 </template>
 
 <script>
