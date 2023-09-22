@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: "@use '~/assets/stylesheet/scss/_colors.scss' as *;",
+          additionalData: `@use '~/assets/stylesheet/scss/_colors.scss' as *;
+          @use '~/assets/stylesheet/scss/_breakpoints.scss' as *;`,
         },
       },
     },
