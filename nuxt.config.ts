@@ -3,6 +3,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: false },
 
+  components: {
+    dirs: [],
+  },
+
   css: [
     "~/node_modules/bootstrap/scss/bootstrap.scss",
     "~/assets/stylesheet/scss/_fonts.scss",
