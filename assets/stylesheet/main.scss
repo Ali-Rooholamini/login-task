@@ -19,7 +19,7 @@ body {
 
 a {
   text-decoration: none;
-  color: $dark-color;
+  color: $dark-text-color;
 
   &:hover {
     text-decoration: none;
@@ -31,4 +31,54 @@ textarea:focus,
 select:focus,
 button:focus {
   outline: 0 !important;
+}
+
+.form-input {
+  width: 100%;
+  height: 56px;
+  border: 1.5px solid $grey-color;
+  border-radius: 12px;
+  background-color: $grey-color;
+  padding: 14px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 28px;
+
+  & ::placeholder {
+    color: $grey-text-color;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    transition: 300ms;
+  }
+}
+
+.form-button {
+  width: 100%;
+  height: 42px;
+  padding: 8px 12px;
+  background-color: $primary-color;
+  box-shadow: 0px 16px 40px -16px #404eb233;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18.2px;
+  color: $white-color;
+  border: none;
+
+  @include breakpoint-up(md) {
+    height: 56px;
+    padding: 16px 24px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+    transition: 300ms;
+  }
+
+  &:active {
+    background-color: $primary-color;
+  }
 }

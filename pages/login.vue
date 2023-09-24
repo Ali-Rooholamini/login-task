@@ -1,7 +1,10 @@
 <template>
   <div class="login-page">
-    <LoginForm @formStep="setFormStep" />
-    <div>
+    <LoginForm
+      class="w-100 d-flex justify-content-center text-center"
+      @formStep="setFormStep"
+    />
+    <div class="d-none d-md-block">
       <img
         :src="formStepImage[formStep]"
         alt="login"
@@ -47,9 +50,13 @@ export default {
 <style lang="scss" scoped>
 .login-page {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 50px;
+
+  @include breakpoint-up(md) {
+    justify-content: space-between;
+  }
 }
 </style>
 
