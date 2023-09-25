@@ -9,15 +9,24 @@
         <input class="form-input" type="email" placeholder="ایمیل" />
       </div>
       <div>
-        <input class="form-input" type="text" placeholder="رمز عبور" />
+        <BasePasswordInput v-model:value="userPassword" />
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import BasePasswordInput from "~/components/global/BasePasswordInput.vue";
 export default {
   name: "RegisterStep",
+  components: {
+    BasePasswordInput,
+  },
+  data() {
+    return {
+      userPassword: "",
+    };
+  },
 };
 </script>
 
