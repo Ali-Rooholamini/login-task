@@ -1,25 +1,31 @@
 <template>
   <div>
-    <LoginStep v-if="(formStep = 'loginStep')" />
+    <LoginStep v-if="formStep === 'loginStep'" />
+    <RegisterStep v-if="formStep === 'registerStep'" />
   </div>
 </template>
 
 <script>
 import LoginStep from "~/components/page/login/LoginStep.vue";
+import RegisterStep from "~/components/page/login/RegisterStep.vue";
 export default {
   name: "LoginForm",
   components: {
     LoginStep,
+    RegisterStep,
   },
   data() {
     return {
-      formStep: "loginStep",
+      formStep: "registerStep",
     };
   },
 
   watch: {
-    formStep(newStep, oldStep) {
-      this.$emit("formStep", newStep);
+    formStep: {
+      immediate: true,
+      handler(newStep, oldStep) {
+        this.$emit("formStep", newStep);
+      },
     },
   },
 };

@@ -74,6 +74,7 @@ export default {
     font-size: 14px;
     font-weight: 700;
     line-height: 18.2px;
+    transition: ease-out 300ms;
 
     > .nuxt-icon {
       margin-left: 8px;
@@ -86,7 +87,10 @@ export default {
 
     &:hover {
       background-color: $secondary-background-color;
-      transition: ease-out 300ms;
+    }
+
+    &:active {
+      background-color: $secondary-background-color--darker;
     }
   }
 
@@ -138,10 +142,14 @@ export default {
       color: $primary-color;
       padding: 16px 24px;
       border-radius: 28px;
+      transition: ease-out 300ms;
 
       &:hover {
         background-color: $secondary-background-color;
-        transition: ease-out 300ms;
+      }
+
+      &:active {
+        background-color: $secondary-background-color--darker;
       }
     }
   }

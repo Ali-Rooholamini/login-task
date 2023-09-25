@@ -43,6 +43,7 @@ button:focus {
   font-size: 14px;
   font-weight: 500;
   line-height: 28px;
+  transition: ease-out 300ms;
 
   & ::placeholder {
     color: $grey-text-color;
@@ -50,7 +51,6 @@ button:focus {
 
   &:focus {
     border-color: $primary-color;
-    transition: ease-out 300ms;
   }
 }
 
@@ -70,10 +70,14 @@ button:focus {
   background-color: transparent;
   border: solid 1.25px $primary-color;
   color: $primary-color;
+  transition: ease-out 300ms;
 
   &:hover {
     background-color: $secondary-background-color;
-    transition: ease-out 300ms;
+  }
+
+  &:active {
+    background-color: $secondary-background-color--darker;
   }
 }
 
@@ -81,10 +85,10 @@ button:focus {
   box-shadow: 0px 16px 40px -16px #404eb233;
   background-color: $primary-color !important;
   color: $white-color !important;
+  transition: ease-out 300ms !important;
 
   &:hover {
     background-color: $secondary-color !important;
-    transition: ease-out 300ms !important;
   }
 
   &:active {

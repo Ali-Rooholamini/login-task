@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      formStep: "loginStep",
+      formStep: "",
     };
   },
   computed: {
