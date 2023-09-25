@@ -4,7 +4,7 @@
       class="w-100 d-flex justify-content-center text-center"
       @formStep="setFormStep"
     />
-    <div class="d-none d-md-block">
+    <div class="d-none d-lg-block">
       <img
         :src="formStepImage[formStep]"
         alt="login"
@@ -52,10 +52,11 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  margin: 25px;
 
   @include breakpoint-up(md) {
     justify-content: space-between;
+    margin: 50px;
   }
 }
 </style>

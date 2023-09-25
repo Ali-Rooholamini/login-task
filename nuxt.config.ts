@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     dirs: [],
   },
 
+  modules: ["nuxt-icons"],
+
   css: [
     "~/node_modules/bootstrap/scss/bootstrap.scss",
     "~/assets/stylesheet/scss/_fonts.scss",
