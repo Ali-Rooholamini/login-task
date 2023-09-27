@@ -8,8 +8,13 @@
         <input class="form-input" type="text" placeholder="شماره موبایل" />
         <input class="form-input" type="email" placeholder="ایمیل" />
       </div>
-      <div>
-        <BasePasswordInput :min="8" v-model:value="userPassword" />
+      <div class="register-step_password-wrapper">
+        <BasePasswordInput
+          class="register-step_password-input"
+          :min="8"
+          v-model:value="userPassword"
+        />
+        <PasswordValidation :userPassword="userPassword" />
       </div>
     </form>
   </div>
@@ -17,10 +22,12 @@
 
 <script>
 import BasePasswordInput from "~/components/global/BasePasswordInput.vue";
+import PasswordValidation from "~/components/common/login/PasswordValidation.vue";
 export default {
   name: "RegisterStep",
   components: {
     BasePasswordInput,
+    PasswordValidation,
   },
   data() {
     return {
@@ -44,6 +51,14 @@ export default {
 
   .register-step_form {
     input {
+      margin-bottom: 40px;
+    }
+  }
+
+  .register-step_password-wrapper {
+    margin-bottom: 40px;
+
+    .register-step_password-input {
       margin-bottom: 40px;
     }
   }
