@@ -9,7 +9,7 @@
         <input class="form-input" type="email" placeholder="ایمیل" />
       </div>
       <div>
-        <BasePasswordInput v-model:value="userPassword" />
+        <BasePasswordInput :min="8" v-model:value="userPassword" />
       </div>
     </form>
   </div>

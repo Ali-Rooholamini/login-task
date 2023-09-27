@@ -10,15 +10,18 @@
       :type="[showPassword ? 'text' : 'password']"
       :style="setPadding"
       placeholder="رمز عبور"
+      :minlength="min"
+      :maxlength="max"
       :value="value"
       @input="onInput"
     />
-    <nuxt-icon
-      class="base-password-input_eye-icon"
-      :class="{ active: showPassword }"
-      name="trg-eye"
-      @click="showPassword = !showPassword"
-    />
+    <button class="base-password-input_eye-icon" type="button">
+      <nuxt-icon
+        :class="{ active: showPassword }"
+        name="trg-eye"
+        @click="showPassword = !showPassword"
+      />
+    </button>
   </div>
 </template>
 
@@ -36,12 +39,28 @@ export default {
       requied: false,
       default: true,
     },
+    min: {
+      type: Number,
+      requied: false,
+      default: 4,
+    },
+    max: {
+      type: Number,
+      requied: false,
+      default: 30,
+    },
   },
 
   data() {
     return {
       showPassword: false,
     };
+  },
+
+  computed: {
+    setPadding() {
+      return this.hasIcon ? "padding-right: 45px" : "";
+    },
   },
 
   watch: {
@@ -52,14 +71,16 @@ export default {
     },
   },
 
-  computed: {
-    setPadding() {
-      return this.hasIcon ? "padding-right: 45px" : "";
-    },
-  },
-
   methods: {
     onInput(event) {
+      const Regex = /[پچجحخهعغفقثصضشسیبلاتنمکگوئدذرزطظژؤإأءًٌٍَُِّ\s]+$/;
+      if (Regex.test(event.target.value)) {
+        return (event.target.value = event.target.value.replace(
+          event.target.value.match(Regex),
+          ""
+        ));
+      }
+
       this.$emit("update:value", event.target.value);
     },
   },
@@ -90,7 +111,8 @@ export default {
   .base-password-input_eye-icon {
     top: 16px;
     left: 12px;
-    cursor: pointer;
+    border: none;
+    background-color: transparent;
   }
 
   .base-password-input_input {
