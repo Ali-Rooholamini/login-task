@@ -21,6 +21,19 @@
         :options="userSexOtions"
         @input="setUserSex"
       />
+      <div class="register-step_form-buttons">
+        <button class="form-button form-button_filled" type="submit">
+          ثبت نام
+        </button>
+        <button class="form-button" type="button">
+          <nuxt-icon name="google" filled />
+          <span>ورود با گوگل</span>
+        </button>
+      </div>
+      <div class="login-step_login-btn">
+        <span> حساب کاربری ندارید؟ </span>
+        <button type="button">ثبت نام کنید</button>
+      </div>
     </form>
   </div>
 </template>
@@ -29,6 +42,7 @@
 import BasePasswordInput from "~/components/global/BasePasswordInput.vue";
 import PasswordValidation from "~/components/common/login/PasswordValidation.vue";
 import BaseFormRadioButton from "~/components/global/BaseFormRadioButton.vue";
+
 export default {
   name: "RegisterStep",
   components: {
@@ -80,6 +94,41 @@ export default {
 
     .register-step_password-input {
       margin-bottom: 40px;
+    }
+  }
+
+  .register-step_form-buttons {
+    margin-top: 40px;
+
+    button {
+      margin-bottom: 32px;
+    }
+  }
+
+  .login-step_login-btn {
+    font-size: 14px;
+    line-height: 18.2px;
+    font-weight: 400;
+
+    > button {
+      height: 56px;
+      left: 0;
+      z-index: 2;
+      font-weight: 700;
+      background-color: transparent;
+      border: none;
+      color: $primary-color;
+      padding: 16px 24px;
+      border-radius: 28px;
+      transition: ease-out 300ms;
+
+      &:hover {
+        background-color: $secondary-background-color;
+      }
+
+      &:active {
+        background-color: $secondary-background-color--darker;
+      }
     }
   }
 }

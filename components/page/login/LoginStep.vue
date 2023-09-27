@@ -19,8 +19,8 @@
         <nuxt-icon name="trg-mobile" />
         <span>ورود با کد یک بار مصرف</span>
       </button>
-      <button class="form-button">
-        <nuxt-icon type="button" name="google" filled />
+      <button class="form-button" type="button">
+        <nuxt-icon name="google" filled />
         <span>ورود با گوگل</span>
       </button>
     </div>
