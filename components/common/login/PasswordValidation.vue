@@ -161,7 +161,7 @@ export default {
         font-size: 13px;
         font-weight: 500;
         line-height: 17px;
-        color: $grey-text-color;
+        color: $light-grey-text-color;
         transition: ease-out 300ms;
 
         > .nuxt-icon::v-deep svg {

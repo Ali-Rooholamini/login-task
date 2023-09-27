@@ -16,6 +16,11 @@
         />
         <PasswordValidation :userPassword="userPassword" />
       </div>
+      <BaseFormRadioButton
+        title="جنسیت"
+        :options="userSexOtions"
+        @input="setUserSex"
+      />
     </form>
   </div>
 </template>
@@ -23,16 +28,31 @@
 <script>
 import BasePasswordInput from "~/components/global/BasePasswordInput.vue";
 import PasswordValidation from "~/components/common/login/PasswordValidation.vue";
+import BaseFormRadioButton from "~/components/global/BaseFormRadioButton.vue";
 export default {
   name: "RegisterStep",
   components: {
     BasePasswordInput,
     PasswordValidation,
+    BaseFormRadioButton,
   },
   data() {
     return {
       userPassword: "",
+      userSex: "",
     };
+  },
+
+  computed: {
+    userSexOtions() {
+      return ["مرد", "زن"];
+    },
+  },
+
+  methods: {
+    setUserSex(event) {
+      this.userSex = event;
+    },
   },
 };
 </script>

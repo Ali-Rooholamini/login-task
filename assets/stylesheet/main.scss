@@ -46,7 +46,7 @@ button:focus {
   transition: ease-out 300ms;
 
   & ::placeholder {
-    color: $grey-text-color;
+    color: $light-grey-text-color;
   }
 
   &:focus {

@@ -112,7 +112,7 @@ export default {
     }
 
     > button:last-child {
-      border-color: $grey-text-color;
+      border-color: $light-grey-text-color;
       color: $dark-text-color;
       font-weight: bold;
 
