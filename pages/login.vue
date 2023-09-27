@@ -51,7 +51,6 @@ export default {
 .login-page {
   display: flex;
   justify-content: center;
-  align-items: center;
   margin: 25px;
 
   @include breakpoint-up(md) {
