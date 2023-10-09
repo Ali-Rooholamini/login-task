@@ -10,7 +10,11 @@
         </button>
       </div>
     </form>
-    <button class="login-step_forget-button" type="button">
+    <button
+      class="login-step_forget-button"
+      type="button"
+      @click="$emit('setNewStep', 'forgetPassStep')"
+    >
       <nuxt-icon name="trg-password" />
       <span>فراموشی رمز عبور</span>
     </button>
@@ -26,7 +30,9 @@
     </div>
     <div class="login-step_register-btn">
       <span> حساب کاربری ندارید؟ </span>
-      <button type="button">ثبت نام کنید</button>
+      <button type="button" @click="$emit('setNewStep', 'registerStep')">
+        ثبت نام کنید
+      </button>
     </div>
   </div>
 </template>

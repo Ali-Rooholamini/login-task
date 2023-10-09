@@ -1,5 +1,5 @@
 <template>
-  <div class="login-page">
+  <div class="login-page" :class="formStep">
     <LoginForm
       class="w-100 d-flex justify-content-center text-center"
       @formStep="setFormStep"
@@ -57,6 +57,10 @@ export default {
     justify-content: space-between;
     margin: 50px;
   }
+}
+
+.login-page.loginStep {
+  align-items: center;
 }
 </style>
 

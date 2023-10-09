@@ -1,7 +1,7 @@
 <template>
   <div class="register-step">
     <strong>ثبت نام</strong>
-    <form class="register-step_form">
+    <form class="register-step_form" @submit.prevent>
       <input class="form-input" type="text" placeholder="نام" />
       <input class="form-input" type="text" placeholder="نام خانوادگی" />
       <div>
@@ -23,7 +23,7 @@
       />
       <div class="register-step_form-buttons">
         <button class="form-button form-button_filled" type="submit">
-          ثبت نام
+          ادامه
         </button>
         <button class="form-button" type="button">
           <nuxt-icon name="google" filled />
@@ -31,8 +31,10 @@
         </button>
       </div>
       <div class="login-step_login-btn">
-        <span> حساب کاربری ندارید؟ </span>
-        <button type="button">ثبت نام کنید</button>
+        <span> حساب کاربری دارید ؟ </span>
+        <button type="button" @click="$emit('setNewStep', 'loginStep')">
+          وارد شوید
+        </button>
       </div>
     </form>
   </div>
