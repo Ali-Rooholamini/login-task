@@ -14,12 +14,13 @@
     <form class="forgetpass-step_form" @submit.prevent>
       <strong>فراموشی رمز عبور</strong>
       <div>
-        <label for="forget">شماره موبایل یا ایمیل خود را وارد کنید</label>
-        <input
-          id="forget"
-          class="form-input"
-          type="text"
+        <label>شماره موبایل یا ایمیل خود را وارد کنید</label>
+        <BaseFormTextInput
+          class="forgetpass-step_form-input"
+          v-model:value="userEmailPhone"
+          validation-type="phone/email"
           placeholder="موبایل / ایمیل"
+          :regex="/^((\+98|0)?9\d{9}$|\w+@\w+\.\w{2,3})$/"
         />
         <button class="form-button form-button_filled" type="submit">
           ادامه
@@ -30,8 +31,19 @@
 </template>
 
 <script>
+import BaseFormTextInput from "~/components/global/BaseFormTextInput.vue";
 export default {
   name: "ForgetPassStep",
+
+  components: {
+    BaseFormTextInput,
+  },
+
+  data() {
+    return {
+      userEmailPhone: "",
+    };
+  },
 };
 </script>
 
@@ -84,7 +96,7 @@ export default {
       color: $dark-text-color;
     }
 
-    input.form-input {
+    .forgetpass-step_form-input {
       margin-bottom: 48px;
     }
   }

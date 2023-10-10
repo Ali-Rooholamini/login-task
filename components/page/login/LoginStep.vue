@@ -5,7 +5,7 @@
       <div>
         <BaseFormTextInput
           class="login-step_form-input"
-          v-model:value="userEmail_phone"
+          v-model:value="userEmailPhone"
           validation-type="phone/email"
           placeholder="موبایل / ایمیل"
           :regex="/^((\+98|0)?9\d{9}$|\w+@\w+\.\w{2,3})$/"
@@ -54,7 +54,7 @@ export default {
 
   data() {
     return {
-      userEmail_phone: "",
+      userEmailPhone: "",
     };
   },
 };
