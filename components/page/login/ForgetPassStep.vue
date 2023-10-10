@@ -54,7 +54,7 @@ export default {
       font-weight: 600;
       line-height: 18.2px;
 
-      .nuxt-icon::v-deep svg {
+      .nuxt-icon:deep(svg) {
         width: 16px;
         height: 16px;
       }

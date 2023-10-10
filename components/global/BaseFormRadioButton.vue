@@ -62,7 +62,7 @@ input {
 }
 
 input[checked] + .base-radio-button_button_checkbox {
-  > .nuxt-icon &::v-deep svg {
+  > .nuxt-icon:deep(svg) {
     color: $primary-color;
   }
 }
@@ -71,8 +71,7 @@ input[checked] + .base-radio-button_button_checkbox {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
-  .base-radio-button_title {
+  & :deep(.base-radio-button_title) {
     font-size: 16px;
     font-weight: 600;
     line-height: 20.8px;
@@ -95,7 +94,7 @@ input[checked] + .base-radio-button_button_checkbox {
       .base-radio-button_button_checkbox {
         display: block;
 
-        > .nuxt-icon::v-deep svg {
+        > .nuxt-icon:deep(svg) {
           width: 20px;
           height: 20px;
           transition: ease-out 300ms;
@@ -113,7 +112,7 @@ input[checked] + .base-radio-button_button_checkbox {
     }
 
     .base-radio-button_button.active {
-      .base-radio-button_button_checkbox > .nuxt-icon::v-deep svg {
+      .base-radio-button_button_checkbox > .nuxt-icon:deep(svg) {
         color: $primary-color;
       }
       .base-radio-button_button_title {

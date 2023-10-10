@@ -85,7 +85,7 @@ export default {
     > .nuxt-icon {
       margin-left: 8px;
 
-      &::v-deep svg {
+      &:deep(svg) {
         width: 24px;
         height: 24px;
       }
@@ -110,7 +110,7 @@ export default {
       > .nuxt-icon {
         margin-left: 8px;
 
-        &::v-deep svg {
+        &:deep(svg) {
           width: 24px;
           height: 24px;
         }
@@ -125,7 +125,7 @@ export default {
       > .nuxt-icon {
         margin-left: 8px;
 
-        &::v-deep svg {
+        &:deep(svg) {
           width: 24px;
           height: 24px;
         }

@@ -96,7 +96,7 @@ export default {
   .base-password-input_password-icon {
     position: absolute;
 
-    &::v-deep svg {
+    &:deep(svg) {
       width: 24px;
       height: 24px;
       color: $light-grey-text-color;
@@ -119,7 +119,7 @@ export default {
     padding: 14px 14px 14px 45px;
   }
 
-  .active::v-deep svg {
+  .active:deep(svg) {
     transition: ease-out 300ms;
     color: $secondary-color !important;
   }

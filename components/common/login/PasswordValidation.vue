@@ -164,7 +164,7 @@ export default {
         color: $light-grey-text-color;
         transition: ease-out 300ms;
 
-        > .nuxt-icon::v-deep svg {
+        > .nuxt-icon:deep(svg) {
           width: 24px;
           height: 24px;
           margin-left: 8px;
