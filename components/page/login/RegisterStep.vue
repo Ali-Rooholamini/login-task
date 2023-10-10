@@ -7,7 +7,6 @@
         v-model:value="userFirstname"
         placeholder="نام"
       />
-      {{ userFirstname }}
       <BaseFormTextInput
         class="register-form_form-input"
         v-model:value="userLastname"

@@ -3,7 +3,13 @@
     <form class="login-step_form">
       <strong>ورود به پنل</strong>
       <div>
-        <input class="form-input" type="text" placeholder="موبایل / ایمیل" />
+        <BaseFormTextInput
+          class="login-step_form-input"
+          v-model:value="userEmail_phone"
+          validation-type="phone/email"
+          placeholder="موبایل / ایمیل"
+          :regex="/^((\+98|0)?9\d{9}$|\w+@\w+\.\w{2,3})$/"
+        />
         <input class="form-input" type="text" placeholder="رمزعبور" />
         <button class="form-button form-button_filled" type="submit">
           ورود به پنل
@@ -38,8 +44,19 @@
 </template>
 
 <script>
+import BaseFormTextInput from "~/components/global/BaseFormTextInput.vue";
 export default {
   name: "LoginStep",
+
+  components: {
+    BaseFormTextInput,
+  },
+
+  data() {
+    return {
+      userEmail_phone: "",
+    };
+  },
 };
 </script>
 
@@ -60,7 +77,8 @@ export default {
       margin-bottom: 40px;
     }
 
-    input.form-input {
+    input.form-input,
+    .login-step_form-input {
       margin-bottom: 32px;
     }
 

@@ -77,9 +77,11 @@ export default {
       if (this.validationType === "email") {
         message = "ایمیل وارد شده صحیح نیست";
       } else if (this.validationType === "phoneNumber") {
-        message = "شماره موبایل وارد شده صحبح نیست";
+        message = "شماره موبایل وارد شده صحیح نیست";
+      } else if (this.validationType === "phone/email") {
+        message = "شماره موبایل یا ایمیل وارد شده صحیح نیست";
       } else {
-        message = "مقدار وارد شده صحبح نیست";
+        message = "مقدار وارد شده صحیح نیست";
       }
 
       return message;
@@ -120,9 +122,9 @@ export default {
 }
 .from-input_error-message {
   color: $val-red-color;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-  line-height: 18.2px;
+  line-height: 16.2px;
   margin-top: 5px;
   display: flex;
   align-self: flex-start;
