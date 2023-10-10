@@ -44,6 +44,12 @@ export default {
       userEmailPhone: "",
     };
   },
+
+  watch: {
+    userEmailPhone(newValue) {
+      this.$emit("setEmailPhone", newValue);
+    },
+  },
 };
 </script>
 

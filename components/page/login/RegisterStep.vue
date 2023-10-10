@@ -87,6 +87,27 @@ export default {
     };
   },
 
+  watch: {
+    userFirstname(newFirstName) {
+      this.$emit("setFistName", newFirstName);
+    },
+    userLastname(newFirstName) {
+      this.$emit("setLastName", newFirstName);
+    },
+    userPhoneNumber(newPhoneNumber) {
+      this.$emit("setPhoneNumber", newPhoneNumber);
+    },
+    userEmail(newEmail) {
+      this.$emit("setEmail", newEmail);
+    },
+    userPassword(newPassword) {
+      this.$emit("setPassword", newPassword);
+    },
+    userSex(newSex) {
+      this.$emit("setSex", newSex);
+    },
+  },
+
   computed: {
     userSexOtions() {
       return ["مرد", "زن"];

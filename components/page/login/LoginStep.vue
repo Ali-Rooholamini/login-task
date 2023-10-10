@@ -10,7 +10,12 @@
           placeholder="موبایل / ایمیل"
           :regex="/^((\+98|0)?9\d{9}$|\w+@\w+\.\w{2,3})$/"
         />
-        <input class="form-input" type="text" placeholder="رمزعبور" />
+        <input
+          v-model="userPassword"
+          class="form-input"
+          type="text"
+          placeholder="رمزعبور"
+        />
         <button class="form-button form-button_filled" type="submit">
           ورود به پنل
         </button>
@@ -55,7 +60,17 @@ export default {
   data() {
     return {
       userEmailPhone: "",
+      userPassword: "",
     };
+  },
+
+  watch: {
+    userEmailPhone(newValue) {
+      this.$emit("setEmailPhone", newValue);
+    },
+    userPassword(newPassword) {
+      this.$emit("setPassword", newPassword);
+    },
   },
 };
 </script>
