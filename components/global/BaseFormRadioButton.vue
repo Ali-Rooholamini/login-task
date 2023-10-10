@@ -13,7 +13,7 @@
           :id="index"
           :name="title"
           :value="option"
-          @change="setValue"
+          @input="setValue"
         />
         <span class="base-radio-button_button_checkbox">
           <nuxt-icon
@@ -50,7 +50,7 @@ export default {
   methods: {
     setValue(event) {
       this.checkedValue = event.target.value;
-      this.$emit("input", this.checkedValue);
+      this.$emit("value", event.target.id);
     },
   },
 };

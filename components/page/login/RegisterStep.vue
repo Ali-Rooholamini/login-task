@@ -42,7 +42,7 @@
       <BaseFormRadioButton
         title="جنسیت"
         :options="userSexOtions"
-        @input="setUserSex"
+        @value="setUserSex"
       />
       <div class="register-step_form-buttons">
         <button class="form-button form-button_filled" type="submit">
