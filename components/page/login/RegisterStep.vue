@@ -2,11 +2,34 @@
   <div class="register-step">
     <strong>ثبت نام</strong>
     <form class="register-step_form" @submit.prevent>
-      <input class="form-input" type="text" placeholder="نام" />
-      <input class="form-input" type="text" placeholder="نام خانوادگی" />
+      <BaseFormTextInput
+        class="register-form_form-input"
+        v-model:value="userFirstname"
+        placeholder="نام"
+      />
+      {{ userFirstname }}
+      <BaseFormTextInput
+        class="register-form_form-input"
+        v-model:value="userLastname"
+        placeholder="نام خانوادگی"
+      />
       <div>
-        <input class="form-input" type="text" placeholder="شماره موبایل" />
-        <input class="form-input" type="email" placeholder="ایمیل" />
+        <BaseFormTextInput
+          class="register-form_form-input"
+          v-model:value="userPhoneNumber"
+          validation-type="phoneNumber"
+          min="11"
+          max="11"
+          placeholder="شماره موبایل"
+          :regex="/^(\+98|0)?9\d{9}$/"
+        />
+        <BaseFormTextInput
+          class="register-form_form-input"
+          v-model:value="userEmail"
+          validation-type="email"
+          placeholder="ایمیل"
+          :regex="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/"
+        />
       </div>
       <div class="register-step_password-wrapper">
         <BasePasswordInput
@@ -41,6 +64,7 @@
 </template>
 
 <script>
+import BaseFormTextInput from "~/components/global/BaseFormTextInput.vue";
 import BasePasswordInput from "~/components/global/BasePasswordInput.vue";
 import PasswordValidation from "~/components/common/login/PasswordValidation.vue";
 import BaseFormRadioButton from "~/components/global/BaseFormRadioButton.vue";
@@ -48,12 +72,17 @@ import BaseFormRadioButton from "~/components/global/BaseFormRadioButton.vue";
 export default {
   name: "RegisterStep",
   components: {
+    BaseFormTextInput,
     BasePasswordInput,
     PasswordValidation,
     BaseFormRadioButton,
   },
   data() {
     return {
+      userFirstname: "",
+      userLastname: "",
+      userPhoneNumber: "",
+      userEmail: "",
       userPassword: "",
       userSex: "",
     };
@@ -86,7 +115,7 @@ export default {
   }
 
   .register-step_form {
-    input {
+    .register-form_form-input {
       margin-bottom: 40px;
     }
   }

@@ -28,7 +28,7 @@ export default {
   },
   data() {
     return {
-      formStep: "forgetPassStep",
+      formStep: "loginStep",
     };
   },
 
