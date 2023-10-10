@@ -18,8 +18,8 @@
           class="register-form_form-input"
           v-model:value="userPhoneNumber"
           validation-type="phoneNumber"
-          min="11"
-          max="11"
+          :min="11"
+          :max="11"
           placeholder="شماره موبایل"
           :regex="/^(\+98|0)?9\d{9}$/"
         />
